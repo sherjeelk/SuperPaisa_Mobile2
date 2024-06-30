@@ -1,0 +1,32 @@
+{
+    "name": "SuperPaisa_Mobile2",
+    "version": "1.0.0",
+    "description": "Custom Celo Composer project.",
+    "private": true,
+    "author": "Celo",
+    "license": "MIT",
+    "scripts": {
+        "react-native-app:start": "yarn workspace @SuperPaisa_Mobile2/react-native-app start",
+        "react-native-app:android": "yarn workspace @SuperPaisa_Mobile2/react-native-app android",
+        "react-native-app:ios": "yarn workspace @SuperPaisa_Mobile2/react-native-app ios",
+        "react-native-app:web": "yarn workspace @SuperPaisa_Mobile2/react-native-app web",
+        "react-native-app:eject": "yarn workspace @SuperPaisa_Mobile2/react-native-app eject",
+        "react-native-app:test": "yarn workspace @SuperPaisa_Mobile2/react-native-app test",
+        "hardhat:compile": "yarn workspace @SuperPaisa_Mobile2/hardhat compile"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/celo-org/celo-composer.git"
+    },
+    "bugs": {
+        "url": "https://github.com/celo-org/celo-composer/issues"
+    },
+    "homepage": "https://github.com/celo-org/celo-composer/blob/main/README.md",
+    "workspaces": [
+        "packages/*"
+    ],
+    "keywords": [
+        "celo-composer",
+        "celo"
+    ]
+}
