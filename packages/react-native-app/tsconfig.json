@@ -5,7 +5,8 @@
   },
   "include": [
     "screens/*",
-    "components/*"
+    "components/*",
+    "services/*"
   ],
   "extends": "expo/tsconfig.base"
 }

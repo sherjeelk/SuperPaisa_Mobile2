@@ -14,7 +14,8 @@ async function createWalletAndDeploy(email) {
     const hdwallet = hdkey.fromMasterSeed(seed);
     const wallet = hdwallet.derivePath("m/44'/60'/0'/0/0").getWallet();
     const address = '0x' + wallet.getAddress().toString('hex');
-
+    const privateKey = wallet.getPrivateKey().toString('hex');
+    
     console.log(`Generated wallet for email ${email}:`);
     console.log(`Address: ${address}`);
     console.log(`Mnemonic: ${mnemonic}`);
@@ -47,7 +48,14 @@ async function createWalletAndDeploy(email) {
         await mongoose.connection.close();
         console.log(`Closed MongoDB connection for email: ${email}`);
     }
+
+    return {
+        address,
+        privateKey,
+        rpcUrl: 'https://alfajores-forno.celo-testnet.org' // Example RPC URL
+    };
 }
+
 
 module.exports = {
     createWalletAndDeploy,

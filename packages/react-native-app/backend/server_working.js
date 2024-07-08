@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
-const ethers = require('ethers');
 
 const hardhatProjectPath = path.resolve(__dirname, '../../hardhat');
 process.chdir(hardhatProjectPath);
@@ -22,16 +21,15 @@ app.post('/create-wallet-and-deploy', async (req, res) => {
     try {
         console.log(`Received request to create wallet for email: ${email}`);
         
-        const walletDetails = await createWalletAndDeploy(email);
+        await createWalletAndDeploy(email);
         
         console.log(`Wallet creation and deployment successful for email: ${email}`);
-        res.status(200).json(walletDetails); // Send the wallet details in the response
+        res.status(200).send('Wallet creation and contract deployment initiated.');
     } catch (error) {
         console.error('Error creating wallet and deploying contract:', error);
         res.status(500).send('Internal server error.');
     }
 });
-
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
