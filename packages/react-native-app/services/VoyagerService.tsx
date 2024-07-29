@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_ENDPOINT = 'https://api.pf.testnet.routerprotocol.com/api'; // Replace with your actual API endpoint
+//const API_ENDPOINT = 'https://api.pf.testnet.routerprotocol.com/api'; // Replace with your actual API endpoint
+
+const API_ENDPOINT = 'https://api-beta.pathfinder.routerprotocol.com/api/v2'; 
 
 export const getQuote = async (quoteParams: any) => {
     try {
